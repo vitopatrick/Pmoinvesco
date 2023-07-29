@@ -1,6 +1,6 @@
 import BtcLogo from "../../img/btc.png";
 import ethLogo from "../../img/eth.png";
-import usdtLogo from "../../img/usdt.png";
+// import usdtLogo from "../../img/usdt.png";
 // import bnbLogo from "../../img/bnb.png";
 // import dogeLogo from "../../img/doge.png";
 // import tronLogo from "../../img/tron.png";
@@ -10,22 +10,22 @@ import usdtLogo from "../../img/usdt.png";
 export const wallets = [
   {
     coin: "Bitcoin",
-    address: "1Ep51eVVgyw231QoDEbzWTqUyDVRKSE9Sm",
+    address: "bc1qg8qj7uvayrcrp2jljx7nyj6tsen9whzl439ykj",
     addressName: "BTC Address",
     icon: BtcLogo,
   },
   {
     coin: "Ethereum ",
-    address: "0xf5500288ff2c4f6244Fac901d639d5266E64F17a",
+    address: "0x552E4b403f4f48621f8cA87B612D34D19f7Dc705",
     addressName: "ETH Address:",
     icon: ethLogo,
   },
-  {
-    coin: "USDT TRC20",
-    address: "TBPfHzoT89V8tuFih3s5NXFCfsYNCLrcuc",
-    addressName: "USDT Address",
-    icon: usdtLogo,
-  },
+  // {
+  //   coin: "USDT TRC20",
+  //   address: "TBPfHzoT89V8tuFih3s5NXFCfsYNCLrcuc",
+  //   addressName: "USDT Address",
+  //   icon: usdtLogo,
+  // },
   // {
   //   coin: "BNB",
   //   address: "bnb10nqychwd78thk88nlpytzpdl4fls78mvfhmkzr",

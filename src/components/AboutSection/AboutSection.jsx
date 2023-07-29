@@ -39,7 +39,7 @@ const AboutSection = () => {
                 },
               }}
             >
-              HighStrike helps you make better trading decisions faster with a
+              Pmoinvesco helps you make better trading decisions faster with a
               single platform for connecting, analyzing, researching and
               signaling.
             </Typography>
@@ -142,9 +142,9 @@ const AboutSection = () => {
               Briefing
             </Typography>
           </Box>
-          <Box>
+          {/* <Box>
             <img src="/img/trading-platform.svg" alt="phone" />
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>

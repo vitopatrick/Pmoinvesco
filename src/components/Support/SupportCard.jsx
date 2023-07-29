@@ -13,10 +13,10 @@ const SupportCard = () => {
               sx={{ fontWeight: "bold" }}
               gutterBottom
             >
-              Highstrike Support
+              Pmoinvesco Support
             </Typography>
             <Typography variant="body2" textAlign="center" gutterBottom>
-              For Further inquires contact support@highstrike.us
+              For Further inquires contact support@Pmoinvesco.com
             </Typography>
           </Paper>
         </Container>

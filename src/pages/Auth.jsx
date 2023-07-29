@@ -1,74 +1,65 @@
-import { Container, Paper, Box, Tab, Tabs, Typography } from "@mui/material";
-import { outerBox, paperStyle, imgBox, alignItems } from "../style/authStyle";
+import { Container, Box, Typography } from "@mui/material";
+import { alignItems } from "../style/authStyle";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RegisterForm from "../components/register-form/Form";
 import LoginForm from "../components/login-form/Form";
-import React from 'react'
-
-const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box>{children}</Box>}
-    </div>
-  );
-};
+import React from "react";
 
 const Auth = () => {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "//code.tidio.co/8hgwgjzxz8ywpe2hcigymmlzh1ihm6ni.js";
-    document.body.append(script);
-  }, []);
-
   return (
-    <Box sx={outerBox}>
+    <div className="bg-green-800 md:h-screen h-[130vh]">
       <Container maxWidth="md">
-        <Box sx={paperStyle}>
-          <Paper sx={paperStyle}>
+        <div className="pt-4">
+          <div className="bg-zinc-100 rounded">
             <Box sx={alignItems}>
-              <Box sx={imgBox}>
+              <div>
                 <Link to="/">
-                  <img src="/img/logo.svg" alt="logo" />
+                  <h4 className="my-3 text-2xl uppercase underline">
+                    Pmoinvesco
+                  </h4>
                 </Link>
-              </Box>
+              </div>
             </Box>
-            <Box>
-              <Tabs value={value} onChange={handleChange} centered>
-                <Tab label="Register" />
-                <Tab label="Login" />
-              </Tabs>
-              <TabPanel value={value} index={0}>
-                <RegisterForm />
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <LoginForm />
-              </TabPanel>
-            </Box>
+            <div className="flex items-center justify-center gap-3">
+              <p
+                className={
+                  value === 0
+                    ? "font-bold text-green-800 underline uppercase cursor-pointer"
+                    : "text-neutral-400 cursor-pointer uppercase"
+                }
+                onClick={() => handleChange(0)}
+              >
+                Register
+              </p>
+              <p
+                className={
+                  value === 1
+                    ? "font-bold text-green-800 underline uppercase cursor-pointer"
+                    : "text-neutral-400 cursor-pointer uppercase"
+                }
+                onClick={() => handleChange(1)}
+              >
+                Login
+              </p>
+            </div>
+            {value === 0 && <RegisterForm />}
+            {value === 1 && <LoginForm />}
             <Box sx={alignItems}>
               <Typography variant="caption" textAlign="center" gutterBottom>
-                © Highstrike.us
+                © Pmoinvesco.com
               </Typography>
             </Box>
-          </Paper>
-        </Box>
+          </div>
+        </div>
       </Container>
-    </Box>
+    </div>
   );
 };
 

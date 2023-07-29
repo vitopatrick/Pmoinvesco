@@ -54,7 +54,7 @@ const Hero = () => {
                 variant="h2"
                 sx={{ color: "black", fontWeight: "700", my: 4 }}
               >
-                HIGHSTRIKE
+                Pmoinvesco
               </Typography>
               <Typography
                 variant="body1"
@@ -106,17 +106,8 @@ const Hero = () => {
               </Typography>
             </Box>
           </Box>
-          <Box
-            sx={{
-              zIndex: "999",
-            }}
-          >
-            <img
-              src="https://highstrike.com/wp-content/uploads/2022/06/banner-mobile-img.png"
-              alt="phone"
-            />
-          </Box>
-          <Box
+
+          {/* <Box
             sx={{
               position: "absolute",
               top: "0",
@@ -133,7 +124,7 @@ const Hero = () => {
               src="https://highstrike.com/wp-content/uploads/2022/06/banner-bg.png"
               alt="phone"
             />
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </>

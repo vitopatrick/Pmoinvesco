@@ -19,10 +19,12 @@ const Navbar = () => {
         >
           <Link to="/">
             <Box>
-              <img src="/img/logo.svg" alt="highstrike logo" />
+              <h4 className="font-bold text-2xl uppercase text-black">
+                Pmoinvesco
+              </h4>
             </Box>
           </Link>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {links.map((link) => (
               <Typography variant="body1" component="p" sx={{ mr: 5 }}>
                 <Link
@@ -34,7 +36,7 @@ const Navbar = () => {
                 </Link>
               </Typography>
             ))}
-          </Box>
+          </Box> */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Link to="/auth">
               <Button
@@ -85,10 +87,7 @@ const Navbar = () => {
             }}
           >
             <Box sx={{ width: "30%" }}>
-              <img
-                src="https://highstrike.com/wp-content/themes/highstrike/assets/images/footer-logo.svg"
-                alt="logo"
-              />
+              <h4 className="font-bold text-2xl uppercase">Pmoinvesco</h4>
             </Box>
             <Box sx={{ display: "flex" }}>
               CLOSE <FaTimes className="bars" size="20px" onClick={toggle} />

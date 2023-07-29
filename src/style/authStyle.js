@@ -5,10 +5,6 @@ export const outerBox = {
   p: 2,
 };
 
-export const paperStyle = {
-  my: 3,
-  padding: 1,
-};
 
 export const alignItems = {
   display: "flex",

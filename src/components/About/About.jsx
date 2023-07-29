@@ -28,7 +28,7 @@ const About = () => {
                 display: "inline-block",
               }}
             >
-              HIGHSTRIKE
+              Pmoinvesco
             </Typography>
             <Typography
               variant="h4"
@@ -46,7 +46,7 @@ const About = () => {
           <Container sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               {about.map((about) => (
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={3} key={about.id}>
                   <Paper
                     sx={{
                       p: { xs: 2, md: 3 },

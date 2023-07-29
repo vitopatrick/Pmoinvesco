@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import {
   createUserWithEmailAndPassword,
@@ -7,20 +7,7 @@ import {
 import { setDoc, doc } from "firebase/firestore";
 import { auth, store } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import "./form.css";
-import {
-  Button,
-  Box,
-  Grid,
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
+// import "./form.css";
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 
 const RegisterForm = () => {
@@ -28,19 +15,18 @@ const RegisterForm = () => {
   const [disable, setDisable] = useState(false);
   const [country, setCountry] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [userCountry, setUserCountry] = useState("");
 
   // toast configuration
   toast.configure();
   // navigation router hook
   const navigate = useNavigate();
-  // refs for form
-  const firstNameRef = useRef();
-  const LastNameRef = useRef();
-  const emailRef = useRef();
-  const phoneRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const countryRef = useRef();
 
   // input functions
   const showPasswordFn = () => {
@@ -76,13 +62,13 @@ const RegisterForm = () => {
     e.preventDefault();
     // check if the input fields are empty
     if (
-      !firstNameRef.current.value |
-      !emailRef.current.value |
-      !phoneRef.current.value |
-      !passwordRef.current.value |
-      !countryRef.current.value |
-      !LastNameRef.current.value |
-      !passwordConfirmRef.current.value
+      !firstName |
+      !email |
+      !phone |
+      !password |
+      !userCountry |
+      !confirmPassword |
+      !lastName
     ) {
       toast("Please fill the form correctly", {
         type: "error",
@@ -94,20 +80,20 @@ const RegisterForm = () => {
     try {
       const { user } = await createUserWithEmailAndPassword(
         auth,
-        emailRef.current.value,
-        passwordRef.current.value
+        email,
+        password
       );
       // send verification
       sendEmailVerification(user);
       // set the backdrop
 
       // add to the database
-      await setDoc(doc(store, "users", emailRef.current.value), {
+      await setDoc(doc(store, "users", email), {
         email: user.email,
-        name: `${firstNameRef.current.value} ${LastNameRef.current.value}`,
-        phone: phoneRef.current.value,
-        password: passwordRef.current.value,
-        country: countryRef.current.value,
+        name: `${firstName} ${lastName}`,
+        phone,
+        password,
+        country: userCountry,
         balance: 0,
         profit: 0,
         bonus: 20,
@@ -120,7 +106,7 @@ const RegisterForm = () => {
         uid: user.uid,
       });
       // toast notification
-      toast.success("Welcome to highstrike,You can now login", {
+      toast.success("Welcome to Pmoinvesco,You can now login", {
         position: "top-center",
         theme: "colored",
       });
@@ -152,112 +138,150 @@ const RegisterForm = () => {
   };
 
   return (
-    <Box sx={{ p: 2 }}>
-      <Box>
-        <Grid container columnSpacing={2} rowSpacing={1}>
-          <Grid item xs={12} md={6}>
-            <TextField
-              type="text"
-              label="First Name"
-              inputRef={firstNameRef}
-              name="firstName"
-              margin="normal"
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              type="text"
-              label="Last Name"
-              inputRef={LastNameRef}
-              name="lastName"
-              fullWidth
-              margin="normal"
-            />
-          </Grid>
-        </Grid>
-        <TextField
-          type="email"
-          label="Enter Email"
-          inputRef={emailRef}
-          name="email"
-          margin="normal"
-          fullWidth
-        />
-        <TextField
-          type="tel"
-          label="Phone Number"
-          inputRef={phoneRef}
-          name="telephone"
-          margin="normal"
-          fullWidth
-        />
-        <Grid container columnSpacing={2} rowSpacing={1}>
-          <Grid item xs={12} md={6}>
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <OutlinedInput
-                id="password"
-                type={showPassword ? "text" : "password"}
-                inputRef={passwordRef}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={showPasswordFn}
-                      edge="end"
-                    >
-                      {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="Password"
+    <div className="p-4">
+      <div className="space-y-6">
+        {/* the root flex container */}
+        <div className="flex md:flex-row flex-col items-center gap-2">
+          <div className="w-full">
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="first name"
+                className="text-neutral-600 font-normal"
+              >
+                First Name
+              </label>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="w-full bg-green-50/50 border-green-800 border outline-none p-3 rounded"
               />
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel htmlFor="password">Confirm Password</InputLabel>
-              <OutlinedInput
-                id="password"
-                type={showPassword ? "text" : "password"}
-                inputRef={passwordConfirmRef}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={showPasswordFn}
-                      edge="end"
-                    >
-                      {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="Confirm Password"
+            </div>
+          </div>
+
+          <div className="w-full">
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="last name"
+                className="text-neutral-600 font-normal"
+              >
+                Last Name
+              </label>
+              <input
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                className="w-full bg-green-50/50 border-green-800 border outline-none p-3 rounded"
               />
-            </FormControl>
-          </Grid>
-        </Grid>
-        <FormControl fullWidth sx={{ mt: 2, mb: 4 }} disable={disable}>
-          <InputLabel>Country</InputLabel>
-          <Select inputRef={countryRef} label="Select Country">
-            {country.map((count, index) => (
-              <MenuItem value={count.main} key={index}>
-                {count.main}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email" className="text-neutral-600 font-normal">
+            Email
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full bg-green-50/50 border-green-800 border outline-none p-3 rounded"
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="first name" className="text-neutral-600 font-normal">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full bg-green-50/50 border-green-800 border outline-none p-3 rounded"
+          />
+        </div>
+        <div className="flex md:flex-row flex-col items-center gap-2">
+          <div className="w-full">
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="password"
+                className="text-neutral-600 font-normal"
+              >
+                Password
+              </label>
+              <div className="w-full bg-green-50/50 border-green-800 border rounded flex items-center">
+                <input
+                  type={!showPassword ? "password" : "text"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-transparent outline-none p-3"
+                />
+                <div className="mr-3">
+                  {showPassword ? (
+                    <MdVisibility
+                      className="text-xl cursor-pointer"
+                      onClick={showPasswordFn}
+                    />
+                  ) : (
+                    <MdVisibilityOff
+                      className="text-xl cursor-pointer"
+                      onClick={showPasswordFn}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full">
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="password"
+                className="text-neutral-600 font-normal"
+              >
+                Confirm Password
+              </label>
+              <div className="w-full bg-green-50/50 border-green-800 border rounded flex items-center">
+                <input
+                  type={!showPassword ? "password" : "text"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full bg-transparent outline-none p-3"
+                />
+                <div className="mr-3">
+                  {showPassword ? (
+                    <MdVisibility
+                      className="text-xl cursor-pointer"
+                      onClick={showPasswordFn}
+                    />
+                  ) : (
+                    <MdVisibilityOff
+                      className="text-xl cursor-pointer"
+                      onClick={showPasswordFn}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <select
+          className="w-full p-4 rounded bg-green-50/50 border-green-800 border outline-none"
+          value={userCountry}
+          onChange={(e) => setUserCountry(e.target.value)}
+          disable={disable}
+        >
+          {country.map((count, index) => (
+            <option value={count.main} key={index}>
+              {count.main}
+            </option>
+          ))}
+        </select>
+        <button
+          className="p-4 rounded bg-green-800 w-full uppercase text-white"
           onClick={saveUser}
         >
           Register
-        </Button>
-      </Box>
-    </Box>
+        </button>
+      </div>
+    </div>
   );
 };
 

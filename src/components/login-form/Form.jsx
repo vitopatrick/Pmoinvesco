@@ -6,17 +6,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Button,
-  TextField,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-  Typography,
-} from "@mui/material";
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 
 import "../register-form/form.css";
@@ -108,47 +97,55 @@ const LoginForm = () => {
   };
 
   return (
-    <Box sx={{ p: { xs: 2, md: 6 } }}>
-      <Box>
-        <TextField
+    <div className="p-4 space-y-3">
+      <div className="flex flex-col gap-1">
+        <label htmlFor="email" className="text-neutral-600 font-normal">
+          Email Address
+        </label>
+        <input
           type="email"
-          name="email"
-          margin="normal"
-          label="Enter Email"
-          fullWidth
-          inputRef={emailRef}
-          sx={{ my: 3 }}
+          ref={emailRef}
+          className="w-full bg-green-50/50 border-green-800 border outline-none p-3 rounded"
         />
-        <FormControl variant="outlined" fullWidth>
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <OutlinedInput
-            id="password"
-            type={showPassword ? "text" : "password"}
-            inputRef={passwordRef}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={showPasswordFn}
-                  edge="end"
-                >
-                  {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
+      </div>
+      <div className="flex flex-col gap-1">
+        <label htmlFor="password" className="text-neutral-600 font-normal">
+          Password
+        </label>
+        <div className="w-full bg-green-50/50 border-green-800 border rounded flex items-center">
+          <input
+            type={!showPassword ? "password" : "text"}
+            ref={passwordRef}
+            className="w-full bg-transparent outline-none p-3"
           />
-        </FormControl>
-        <Box sx={{ my: 2, cursor: "pointer" }}>
-          <Typography variant="body2" color="gray" onClick={resetPassword}>
-            Click to Here to Recover Password.
-          </Typography>
-        </Box>
-      </Box>
-      <Button fullWidth variant="contained" color="primary" onClick={loginUser}>
-        Sign In
-      </Button>
-    </Box>
+          <div className="mr-3">
+            {showPassword ? (
+              <MdVisibility
+                className="text-xl cursor-pointer"
+                onClick={showPasswordFn}
+              />
+            ) : (
+              <MdVisibilityOff
+                className="text-xl cursor-pointer"
+                onClick={showPasswordFn}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+      <button
+        onClick={resetPassword}
+        className="text-red-800 capitalize hover:text-red-600"
+      >
+        reset password
+      </button>
+      <button
+        onClick={loginUser}
+        className="w-full p-3 bg-green-800 text-white uppercase text-lg rounded shadow my-3"
+      >
+        Login
+      </button>
+    </div>
   );
 };
 

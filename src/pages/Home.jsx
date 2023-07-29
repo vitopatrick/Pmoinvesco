@@ -18,7 +18,7 @@ const Home = () => {
       var s1 = document.createElement("script"),
         s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.src = "https://embed.tawk.to/64a9d61a94cf5d49dc625fae/1h4rmon68";
+      s1.src = "https://embed.tawk.to/64c47f7294cf5d49dc671861/1h6fp3mqp";
       s1.charset = "UTF-8";
       s1.setAttribute("crossorigin", "*");
       s0.parentNode.insertBefore(s1, s0);
@@ -40,5 +40,4 @@ const Home = () => {
 };
 
 export default Home;
-
 

@@ -34,7 +34,7 @@ const Footer = () => {
                   Support
                 </Typography>
                 <Typography sx={{ color: "#fff" }}>
-                  support@highstrike.us
+                  support@Pmoinvesco.com
                 </Typography>
               </Link>
             </Box>
@@ -128,7 +128,7 @@ const Footer = () => {
             textAlign="center"
             sx={{ mt: 5, mb: 2, color: "#fff" }}
           >
-            © Copyright 2022. HighStrike Inc.
+            © Copyright 2023. Pmoinvesco Inc.
           </Typography>
         </Box>
       </Container>

@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
             <MdMenu />
           </IconButton>
           <Box>
-            <img src="/img/logo.svg" alt="logo" loading="lazy" />
+            <h4 className="text-2xl uppercase font-bold">Pmoinvesco</h4>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box>

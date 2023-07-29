@@ -25,7 +25,7 @@ const Team = () => {
         <Grid container spacing={3}>
           {memebers.map((memeber) => (
             <Grid item sm={12} md={4}>
-              <Paper sx={{ p: 2, bgcolor: "#fff", height: "700px" }}>
+              <Paper sx={{ p: 2, bgcolor: "#fff", height: "400px" }}>
                 <Box>
                   <Typography
                     sx={{
@@ -40,9 +40,9 @@ const Team = () => {
                     {memeber.names}
                   </Typography>
                 </Box>
-                <Box sx={{ width: "219", height: "219" }}>
+                {/* <Box sx={{ width: "219", height: "219" }}>
                   <img src={memeber.img} alt={memeber.names} />
-                </Box>
+                </Box> */}
                 <Divider />
                 <Box
                   sx={{ display: "flex", alignItems: "center", color: "#000" }}

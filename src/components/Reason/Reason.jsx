@@ -25,7 +25,7 @@ const Reason = () => {
                   fontWeight: "600",
                 }}
               >
-                HighStrike is a Self-Directed Trader’s Nerve Center
+                Pmoinvesco is a Self-Directed Trader’s Nerve Center
               </Typography>
             </Box>
             <Box sx={{ display: "flex", mb: 3 }}>
@@ -60,7 +60,7 @@ const Reason = () => {
                 <Typography
                   sx={{ color: "#404046", width: { sm: "100%", md: "60%" } }}
                 >
-                  HighStrike partners with professional traders around the globe
+                  Pmoinvesco partners with professional traders around the globe
                   to provide you a hub of information, education, strategy, live
                   streams, social media ecosystsems and buy/sell signals for
                   self-directed traders and investors. Our mission is to help
