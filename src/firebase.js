@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 
 // ? web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDI25L1Jr-4vq8ejEuu4VhgFtMkcCz_oWc",
-  authDomain: "highstrike-4fa0d.firebaseapp.com",
-  projectId: "highstrike-4fa0d",
-  storageBucket: "highstrike-4fa0d.appspot.com",
-  messagingSenderId: "535544711891",
-  appId: "1:535544711891:web:043b9eeb4288cad7fd6226"
+  apiKey: "AIzaSyAwgI1Ez5pqjyzLgUM2JrcY6zmYzynVQ5Q",
+  authDomain: "pmoinvesco-5c1ce.firebaseapp.com",
+  projectId: "pmoinvesco-5c1ce",
+  storageBucket: "pmoinvesco-5c1ce.appspot.com",
+  messagingSenderId: "361196578221",
+  appId: "1:361196578221:web:e6215e614a180e4c77ed24",
 };
 
 // ? Initialize Firebase
