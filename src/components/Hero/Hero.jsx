@@ -86,7 +86,7 @@ const Hero = () => {
                 sx={{ my: 3, fontWeight: "600", fontSize: "1rem" }}
               >
                 We are currently hosted on a Discord server but will <br />
-                be moving to our own App this summer.
+                be moving to our own App this summer
               </Typography>
               <Typography
                 variant="body1"
