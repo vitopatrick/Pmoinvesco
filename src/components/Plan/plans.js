@@ -2,12 +2,12 @@ export const plans = [
   {
     title: "STARTER",
     Duration: "3-7 days",
-    price: "2000-3,500",
-    min: "2000",
+    price: "5000-8,500",
+    min: "5000",
     about: [
-      "Min. Possible deposit: $2000",
-      "Max. Possible deposit: $3500",
-      "$4300 Minimum return",
+      "Min. Possible deposit: $5000",
+      "Max. Possible deposit: $8500",
+      "$6000 Minimum return",
       "$13500 Maximum return",
       "$50 Gift Bonus",
     ],
@@ -15,10 +15,10 @@ export const plans = [
   {
     title: "PREMIUM",
     Duration: "3-7 days",
-    price: "2,000-4,500",
-    min: "2000",
+    price: "5,000-10,000",
+    min: "5000",
     about: [
-      "Min. Possible deposit: $2000",
+      "Min. Possible deposit: $5000",
       "Max. Possible deposit: $4500",
       "$17000 Minimum return",
       "$38500 Maximum return",
