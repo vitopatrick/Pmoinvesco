@@ -25,6 +25,6 @@ export const test = [
     person: "Becky Lester Lambert",
     position: "Investor",
     testimony:
-      "I no longer have to worry about sustaining my trades because with Highstrike- all i do is sit back and stakes. Trusted and legit!",
+      "I no longer have to worry about sustaining my trades because with pmoinvesco- all i do is sit back and stakes. Trusted and legit!",
   },
 ];

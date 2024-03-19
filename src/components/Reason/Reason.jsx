@@ -121,7 +121,7 @@ const Reason = () => {
               sx={{ position: "absolute", top: "50%", mb: 4, width: "100%" }}
             >
               <img
-                src="https://highstrike.com/wp-content/uploads/2022/06/background-img-pattern.png"
+                src="https://pmoinvesco.com/wp-content/uploads/2022/06/background-img-pattern.png"
                 alt="phone"
               />
             </Box>

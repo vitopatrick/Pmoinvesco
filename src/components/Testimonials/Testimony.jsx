@@ -30,7 +30,7 @@ const Testimony = () => {
             <Box sx={{ display: "flex" }}>
               <Box>
                 {/* <img
-                  src="https://highstrike.app/assets/images/client-image.svg"
+                  src="https://pmoinvesco.app/assets/images/client-image.svg"
                   alt="logo"
                 /> */}
               </Box>
@@ -44,7 +44,7 @@ const Testimony = () => {
               </Box>
               <Box>
                 {/* <img
-                  src="https://highstrike.app/static/media/quotes-img.380b30dd060a400cf14d.svg"
+                  src="https://pmoinvesco.app/static/media/quotes-img.380b30dd060a400cf14d.svg"
                   alt="logo"
                 /> */}
               </Box>

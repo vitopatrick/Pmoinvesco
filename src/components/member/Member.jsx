@@ -108,7 +108,7 @@ const Member = () => {
           </Box>
           <Box>
             <img
-              src="https://highstrike.com/wp-content/uploads/2022/06/become-member-img1.png"
+              src="https://pmoinvesco.com/wp-content/uploads/2022/06/become-member-img1.png"
               alt="phone"
             />
           </Box>

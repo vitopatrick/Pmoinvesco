@@ -121,7 +121,7 @@ const Hero = () => {
             }}
           >
             <img
-              src="https://highstrike.com/wp-content/uploads/2022/06/banner-bg.png"
+              src="https://pmoinvesco.com/wp-content/uploads/2022/06/banner-bg.png"
               alt="phone"
             />
           </Box> */}
