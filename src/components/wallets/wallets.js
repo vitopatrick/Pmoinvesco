@@ -10,7 +10,7 @@ import ethLogo from "../../img/eth.png";
 export const wallets = [
   {
     coin: "Bitcoin",
-    address: "bc1qg8qj7uvayrcrp2jljx7nyj6tsen9whzl439ykj",
+    address: "bc1qx8rg23xngdl6rmereh5ktn0qgkgmp5htalrkfr",
     addressName: "BTC Address",
     icon: BtcLogo,
   },
